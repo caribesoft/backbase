@@ -1,0 +1,74 @@
+<div class="container" class="main">
+	<div class="content">
+	  <div class="container">	
+  		<div class="row topi" >
+  			<div class="col-md-12"></div>
+  			<div class="col-md-4">
+  				<div class="card">
+  					<div class="card-header verde">
+  				 		<i class="material-icons">cached</i>  Make a Transaction
+  			    	</div>
+  			    	<form [formGroup]="transForm"  novalidate >
+  					<div *ngIf="!confirm" class="card-body">
+ 						<label>FROM ACCOUNT</label>
+ 						<input type="text" name="from" class="form-control" disabled="" 
+ 						placeholder="Free Checking (4692): {{ balance | currency }}" > 
+ 						<label>TO ACCOUNT</label>
+ 						<select #toaccount formControlName="toaccount" class="form-control sel shadow-none" required (change)="change()">
+   							<option *ngFor="let act of accounts" [value]="act.data.name">{{act.data.name}}</option>
+						</select>
+ 						<label>AMOUNT</label>
+ 						<input type="number" #amount class="form-control shadow-none" formControlName="amount" required> 
+ 						<button class="btn right" (click)="validateForm()">SUBMIT</button>
+ 						<br>
+ 						<div class="error-message">{{errorMessage}}</div>
+  					</div>
+  					<div *ngIf="confirm" class="card-body">
+  						<div class="cfgmsg">CLICK ON TRANSFER TO CONFIRM YOUR TRANSACTION</div>
+ 						<label>FROM ACCOUNT</label>
+ 						<h5>Free Checking (4692): {{ balance | currency }}</h5>
+ 						<label>TO ACCOUNT</label>
+ 						<h5>{{fraccount}}</h5>
+ 						<label>AMOUNT</label>
+ 						<h5>{{framount | currency}}</h5>
+ 						<button class="btn left" (click)="resetForm()">RESET</button>
+ 						<button class="btn confirm" (click)="submitForm()">TRANSFER</button>
+ 						<br>
+ 						
+  					</div>
+  				    </form>
+				</div>
+  		    </div>
+  			<div class="col-md-8" >
+  				<div class="card">
+  					<div class="card-header verde">
+  						<i class="material-icons">work</i>Recent Transactions
+					</div>
+					<div class="row">
+					<div class="col-md-4">
+						<input type="search" name="searchterm" placeholder="Search by typing..." class="form-control search shadow-none" [(ngModel)]="term">
+						
+					</div>
+					<div class="col-md-8 filter">
+						<span>Sort by </span>
+						<button class="btn btn-filter shadow-none" (click)="sortByDate()">DATE</button>
+						<button class="btn btn-filter shadow-none" (click)="sortByBene()">BENEFICIARY</button>
+						<button class="btn btn-filter shadow-none" (click)="sortByAmount()">AMOUNT</button>
+					</div>
+				</div>
+  					<div class="card-body scroll">
+  						<table class="table table-condensed">
+  						<tr *ngFor="let item of transactions | filter:term">
+  							<td>{{item.data.dates.valueDate | date: 'MMM, dd' }}</td>
+  							<td><img class="logo" src="{{item.data.logo}}"></td>
+  							<td>{{item.data.merchant.name}} <br> {{item.data.type}}</td> 
+  							<td style="text-align: right;">{{item.data.transaction.amountCurrency.amount | currency }}</td>
+  						</tr>	
+  					</table>
+  					</div>
+				</div>
+  			</div> 
+  		</div>
+  	</div>		
+  </div>	
+</div>

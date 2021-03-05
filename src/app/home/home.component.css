@@ -1,0 +1,173 @@
+
+.main {
+  height: 100%; 
+  width: 99%;
+  background: url(../../assets/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px; 
+  
+}
+
+.scroll {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+
+.topi {
+	padding-top: 100px;
+}
+
+.verde {
+	background: #0c8397;
+	color: #FFF;
+	text-align: center;
+}
+
+label {
+	font-size: 14px;
+	font-family: 'Kanit', sans-serif;
+
+}
+.table tr {
+	font-size: 16px;
+	font-family: 'Kanit', sans-serif;
+    border-bottom: 1px solid #444;
+}
+.right {
+	float: right;
+	background: #ee7033;
+	width: 200px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-family: 'Kanit', sans-serif;
+	margin-top: 10px;
+}
+.left {
+	float: left;
+	background: #eee;
+	width: 150px;
+	color: #000;
+	font-size: 14px;
+	font-family: 'Kanit', sans-serif;
+	margin-top: 10px;
+}
+.confirm {
+	float: right;
+	background: #ee7033;
+	width: 150px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-family: 'Kanit', sans-serif;
+	margin-top: 10px;
+}
+.filter {
+	margin-top: 10px;
+}
+
+.btn-filter {
+	background: #fff;
+	font-size: 12px;
+	color: #000;
+	font-family: 'Kanit', sans-serif;
+	width: 120px;
+	border: 1px solid #e4e8f0;
+	border-radius: 0px;
+}
+
+.card {
+	border: none;
+}
+
+span {
+	font-size: 14px;
+	font-family: 'Kanit', sans-serif;
+	padding-right: 7px;
+}
+
+.error-message {
+	font-size: 14px;
+	font-family: 'Kanit', sans-serif;
+	color: #FF0000;
+	text-align: center;
+	width: 100%;
+	margin-top: 20px;
+}
+
+
+.material-icons {
+	position: absolute;
+	left:16px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 14px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.logo {
+	max-width: 50px;
+}
+
+.sel {
+  color: #000;
+  background: #eee;
+  font-size: 14px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.cfgmsg, h5 {
+	font-size: 16px;
+	font-family: 'Kanit', sans-serif;
+	border-bottom: 1px solid #e4e8f0;
+}
+.search {
+	border-bottom: 1px solid #e4e8f0 !important;
+}
+
+
+/*----------------------------------------*/
+/*  Responsive
+/*----------------------------------------*/
+@media(max-height: 774px) {
+
+  	.scroll {
+    	max-height: 450px;
+    	overflow-y: auto;
+	}
+
+}
+
+@media(max-width: 414px) {
+
+  	.logo {
+	  max-width: 40px;
+     }
+
+     .btn-filter {
+		background: #fff;
+		font-size: 11px;
+		color: #000;
+		font-family: 'Kanit', sans-serif;
+		width: 100px;
+		border: 1px solid #e4e8f0;
+		border-radius: 0px;
+	}
+
+	.main {
+	  height: 100%; 
+	  background: #fff;
+	  margin: 0px; 
+	  
+	}
+
+	.table tr {
+		font-size: 14px;
+		font-family: 'Kanit', sans-serif;
+	    border-bottom: 1px solid #444;
+	}
+
+	
+}
+
